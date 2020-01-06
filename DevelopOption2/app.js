@@ -10,19 +10,32 @@ const internCard = require("./htmlRender/internCard");
 const managerCard = require("./htmlRender/managerCard");
 const mainRender = require("./htmlRender/mainRender");
 
-
+//puts output into the 'output' folder
 const outputPath = path.resolve(__dirname, "output", "team.html");
-
+//where cards will be going-- teamMember
 const teamMember = [];
 
 function mainApp() {
     // create a manager
     inquirer    
         .prompt([
-        
+            {
+            type: "input",
+            message: "What is your manager's name?",
+            name: "managerName"
+            },
+            {
+
+            }
         ])
         .then(answers =>{
-            
+            const {managerName, managerID, managerEmail, managerNumber} = answers;
+            const managerObj = new Manager(managerName, managerId, managerEmail, managerNumber);
+
+            const managerCardHtml = managerCard(managerObj);
+
+            teamMember.push(managerCardHtml);
+            createTeam();
         })
 
 }
