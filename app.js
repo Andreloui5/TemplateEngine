@@ -1,4 +1,4 @@
-// const Employee = require("./lib/Employee");
+const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
@@ -113,9 +113,9 @@ function getEngineer() {
   .then(answers =>{
       const {engineerName, engineerId, engineerEmail, engineerGithub} = answers;
       const engineerObj = new Engineer(engineerName, engineerId, engineerEmail, engineerGithub);
-
+// console.log(engineerObj);
       const engineerCardHtml = engineerCard(engineerObj);
-
+// console.log(engineerCardHtml);
       teamMember.push(engineerCardHtml);
       createTeam();
   })
