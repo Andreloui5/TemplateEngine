@@ -60,20 +60,24 @@ function createTeam(){
             type: "list",
             name: "userChoice",
             message: "What would you like to do?",
-            choices: ["Add an Engineer", "Add an Intern", "I'm all done. Let's see my team!"]
+            choices: ["Add an Engineer", "Add an Intern", "I'm all done. Let's see my team!"],
             }            
         ])
-        .then(userChoice => {
+        .then(answers => {
+            // console.log(answers.userChoice);
             // create a switch statement to choose between engineer, intern, or build team
-           switch (userChoice) {
+           switch (answers.userChoice) {
                case "Add an Engineer": {
-                   return getEngineer();
+                   getEngineer();
+                   break;
                }
                case "Add an Intern": {
-                   return getIntern();
+                   getIntern();
+                   break;
                }
                case "I'm all done. Let's see my team!": {
-                   return buildTeam();
+                   buildTeam();
+                   break;
                }
            }
         })
