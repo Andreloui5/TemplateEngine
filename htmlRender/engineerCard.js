@@ -2,7 +2,7 @@
 // create a function that holds the html that will out put the engineer
 function engineerCard(data){
     return `
-    <div class="card employee-card">
+    <div class="card employee-card m-2 col-3">
     <div class="card-header">
         <h2 class="card-title">${data.name}</h2>
         <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>Engineer</h3>

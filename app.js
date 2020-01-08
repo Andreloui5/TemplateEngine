@@ -106,7 +106,7 @@ function getEngineer() {
       },
       {
       type: "input",
-      message: "What is your engineer's phone Github?",
+      message: "What is your engineer's Github?",
       name: "engineerGithub"
       }
   ])
@@ -158,7 +158,10 @@ function getIntern() {
 }
 
 function buildTeam() {
-fs.writeFileSync(outputPath, mainRender(teamMember), "utf-8");
+    //remove commas from the array
+const joinedTeam = teamMember.join('');
+
+fs.writeFileSync(outputPath, mainRender(joinedTeam), "utf-8");
 }
 
 mainApp()
